@@ -10,16 +10,19 @@ const url = require('url');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow;
+let mainWindow = null;
+//远程页面连接地址
+let remoteUrl = process.argv0;
 
 function createWindow () {
+  if(!remoteUrl)return;
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 600});
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
+    pathname: path.join(remoteUrl, 'index.html'),
+    protocol: 'http:',
     slashes: true
   }));
 
@@ -62,3 +65,4 @@ app.on('activate', function () {
 process.on("message", (m) => {
     
 });
+// process.send(path.join(process.argv0, 'index.html'));
