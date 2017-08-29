@@ -5,9 +5,9 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node .",
+    "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder ."
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   "homepage": "https://github.com/Demonstrations/alps#readme",
   "devDependencies": {
     "electron": "^1.7.5",
-    "electron-builder": "^19.26.0"
+    "electron-builder": "^19.26.3"
   },
   "dependencies": {}
 }
