@@ -36,14 +36,18 @@
           "squirrel"
         ],
         "darwin": [
-          "zip"
+          "zip",
+          "dmg"
         ],
         "linux": [
           "deb",
           "rpm"
         ]
       },
-      "electronPackagerConfig": {},
+      "electronPackagerConfig": {
+        "arch": "x64",
+        "asar": true
+      },
       "electronWinstallerConfig": {
         "name": ""
       },
